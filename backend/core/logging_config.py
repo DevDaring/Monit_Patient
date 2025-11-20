@@ -1,0 +1,56 @@
+"""Logging configuration for the application."""
+import logging
+import sys
+from pathlib import Path
+from loguru import logger
+from backend.core.config import settings
+
+
+def setup_logging():
+    """Configure logging for the application."""
+    # Remove default logger
+    logger.remove()
+
+    # Console handler
+    logger.add(
+        sys.stdout,
+        format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>",
+        level=settings.LOG_LEVEL,
+        colorize=True
+    )
+
+    # File handler
+    log_path = Path(settings.LOG_FILE_PATH)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    logger.add(
+        settings.LOG_FILE_PATH,
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function} - {message}",
+        level=settings.LOG_LEVEL,
+        rotation="100 MB",
+        retention="10 days",
+        compression="zip"
+    )
+
+    # Intercept standard logging
+    class InterceptHandler(logging.Handler):
+        def emit(self, record):
+            try:
+                level = logger.level(record.levelname).name
+            except ValueError:
+                level = record.levelno
+
+            frame, depth = logging.currentframe(), 2
+            while frame.f_code.co_filename == logging.__file__:
+                frame = frame.f_back
+                depth += 1
+
+            logger.opt(depth=depth, exception=record.exc_info).log(level, record.getMessage())
+
+    logging.basicConfig(handlers=[InterceptHandler()], level=0)
+
+    return logger
+
+
+# Initialize logger
+app_logger = setup_logging()
