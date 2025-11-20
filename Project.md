@@ -1,6 +1,19 @@
 # Monit Patient - Complete Project Structure
 
 ## 🎯 Tagline: "Predict the future where uncertainty is the enemy"
+## Main Idea - Idea - An agentic system will integrate hospital database, gemini call with google grounding search, patient diagnostics, research paper dataset, medical guideline.
+Hospital Superitendent or any admin can handle that agentic system.
+There will be an admin page where one page will be provided to to setup the agent.
+In that page there will be three row.
+One row will be for Orchestrator Agent(Admin can see 'Manager')
+One row will be for SUper Agent (For admin 'Team Lead')
+One row will be for Utility Agent (For admin Staff)
+This agents will be as card form. These cards will have dropdown.
+Now admin can select which model will be used by that agent from drowndown.
+Admin can select which task will be done by staff slecting a keyword from dropdown.
+Option for that dropdown like 'Compare with External Research' , 'Compare with Internal Research', 'Study Internal Patient Data', 'Study Individual Data for Personal Care', 'Study Medical Guidelines' etc.
+In that page basic arctitecture will be selected like 4 staff, 2 team lead and 1 manager.
+Admin can change the selection . Admin can incease Team lead and staff. but one team lead should have at least two staff. Team staff connection also can be built by admin.
 
 ---
 
