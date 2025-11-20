@@ -1,0 +1,36 @@
+{
+  "name": "monit-patient",
+  "version": "1.0.0",
+  "description": "AI-powered ICU patient monitoring system with real-time streaming and voice interface",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "backend:dev": "cd backend && python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:preview": "cd frontend && npm run preview",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f",
+    "setup": "bash scripts/setup.sh",
+    "generate:data": "python scripts/generate_demo_data.py",
+    "simulate:vitals": "python scripts/simulate_vitals_stream.py",
+    "test": "pytest backend/tests/",
+    "lint": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "healthcare",
+    "icu",
+    "patient-monitoring",
+    "ai-agents",
+    "real-time",
+    "kafka",
+    "gemini",
+    "elevenlabs"
+  ],
+  "author": "Monit Patient Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
