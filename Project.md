@@ -15,6 +15,16 @@ Option for that dropdown like 'Compare with External Research' , 'Compare with I
 In that page basic arctitecture will be selected like 4 staff, 2 team lead and 1 manager.
 Admin can change the selection . Admin can incease Team lead and staff. but one team lead should have at least two staff. Team staff connection also can be built by admin.
 
+Rephrase Idea : # Monit Patient: Project Overview
+
+**Monit Patient** is an AI-powered real-time patient monitoring system that predicts critical health deterioration before it happens, giving healthcare providers crucial time to intervene. In intensive care units, patients can rapidly decline, but human oversight has limitations—doctors cannot simultaneously monitor every vital sign of every patient 24/7. Our solution combines **Confluent Cloud's real-time data streaming**, **Google Gemini's advanced AI capabilities**, and **ElevenLabs' multilingual voice interface** to create an intelligent guardian system that never sleeps. Patient vital signs (heart rate, blood pressure, oxygen levels) are continuously streamed through Confluent Kafka topics, where a sophisticated multi-agent AI system—built on Gemini 2.5—analyzes patterns across thousands of similar historical cases, compares findings against medical research papers and clinical guidelines, and identifies early warning signs of conditions like sepsis, cardiac arrest, or respiratory failure. The system employs a hierarchical agent architecture: an **Orchestrator Agent** (Manager) coordinates the analysis, **Super Agents** (Team Leads) supervise specialized teams, and **Utility Agents** (Staff) perform specific tasks such as comparing external research, studying patient histories, and checking medical protocols. When an anomaly is detected, the system generates risk scores, flags critical patients with visual alerts, and automatically notifies assigned physicians via email and dashboard notifications—all within 2-5 seconds of detecting the pattern. Healthcare providers can interact with the system through a **voice-enabled chat interface powered by ElevenLabs**, allowing doctors to query patient status in natural language across multiple languages including English, Hindi, and Bengali, receiving spoken responses that provide immediate insights even during sterile procedures or while moving between patients. Hospital administrators have full control through an intuitive configuration panel where they can customize the agent hierarchy, select which AI models power each agent, assign specific tasks, and adjust the system to their institution's protocols—all without writing code. By combining real-time streaming analytics, collaborative AI reasoning, and accessible voice interaction, Monit Patient transforms reactive healthcare into predictive care, potentially reducing ICU mortality rates while supporting medical professionals with intelligent, multilingual, and always-available clinical decision support.
+
+**Tagline**: *"Predict the future where uncertainty is the enemy"*
+
+---
+
+**Line Count**: 24 lines ✓
+
 ---
 
 ## 📁 **ROOT DIRECTORY STRUCTURE**
